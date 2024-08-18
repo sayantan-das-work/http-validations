@@ -23,7 +23,7 @@ public class RequestPojo {
 
     @StringValidation(
             required = true,
-            minSize = 1,
+            minSize = 10,
             maxSize = 6,
             regexp = "^[A-Z]*$",
             patternErrMsg = "Input contains invalid characters"

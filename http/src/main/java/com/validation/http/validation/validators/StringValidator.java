@@ -14,8 +14,8 @@ import java.util.regex.PatternSyntaxException;
 
 @Slf4j
 public class StringValidator implements ConstraintValidator<StringValidation, String> {
-    private static final String logPrefix = StringValidator.class.getName();
-    private static Pattern pattern;
+    private static final String LOG_PREFIX = StringValidator.class.getName();
+    private Pattern pattern;
 
     private boolean nullValueAllowed;
     private boolean emptyValueAllowed;
@@ -43,9 +43,9 @@ public class StringValidator implements ConstraintValidator<StringValidation, St
 
         if(this.maxLength<this.minLength)
         {
-            log.error("[ {}.initialize() ] :: Maximum Size cannot be less than Minimum Size",logPrefix);
+            log.error("[ {}.initialize() ] :: Maximum Size cannot be less than Minimum Size", LOG_PREFIX);
             throw new IllegalValidationConstraintsException(
-                    (logPrefix + " :: Maximum Size cannot be less than Minimum Size"),
+                    (LOG_PREFIX + " :: Maximum Size cannot be less than Minimum Size"),
                     HttpStatus.INTERNAL_SERVER_ERROR
             );
         }
@@ -53,9 +53,9 @@ public class StringValidator implements ConstraintValidator<StringValidation, St
         try{
             pattern = Pattern.compile(constraintAnnotation.regexp());
         }catch (PatternSyntaxException patternSyntaxException){
-            log.error("[ {}.initialize() ] :: Invalid regex pattern provided",logPrefix);
+            log.error("[ {}.initialize() ] :: Invalid regex pattern provided", LOG_PREFIX);
             throw new IllegalValidationConstraintsException(
-                    (logPrefix + " :: Invalid regexp has been provided"),
+                    (LOG_PREFIX + " :: Invalid regexp has been provided"),
                     HttpStatus.INTERNAL_SERVER_ERROR
             );
         }
@@ -103,7 +103,7 @@ public class StringValidator implements ConstraintValidator<StringValidation, St
                 return false;
             }
         } catch (Exception e) {
-            log.error("[ {}.isValid() ] Exception :: {}",logPrefix,e.getMessage());
+            log.error("[ {}.isValid() ] Exception :: {}", LOG_PREFIX,e.getMessage());
             throw new RuntimeException(e.getMessage());
         }
 

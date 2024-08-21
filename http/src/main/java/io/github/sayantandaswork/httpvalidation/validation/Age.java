@@ -1,6 +1,6 @@
-package com.validation.http.validation;
+package io.github.sayantandaswork.httpvalidation.validation;
 
-import com.validation.http.validation.validators.AgeValidator;
+import io.github.sayantandaswork.httpvalidation.validation.validators.AgeValidator;
 
 import javax.validation.Constraint;
 import javax.validation.Payload;

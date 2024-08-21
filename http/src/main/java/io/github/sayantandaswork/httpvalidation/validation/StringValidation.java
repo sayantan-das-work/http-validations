@@ -1,6 +1,6 @@
-package com.validation.http.validation;
+package io.github.sayantandaswork.httpvalidation.validation;
 
-import com.validation.http.validation.validators.StringValidator;
+import io.github.sayantandaswork.httpvalidation.validation.validators.StringValidator;
 
 import javax.validation.Constraint;
 import javax.validation.Payload;

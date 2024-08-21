@@ -1,7 +1,7 @@
-package com.validation.http.validation.validators;
+package io.github.sayantandaswork.httpvalidation.validation.validators;
 
-import com.validation.http.exception.IllegalValidationConstraintsException;
-import com.validation.http.validation.StringValidation;
+import io.github.sayantandaswork.httpvalidation.exception.IllegalValidationConstraintsException;
+import io.github.sayantandaswork.httpvalidation.validation.StringValidation;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.http.HttpStatus;

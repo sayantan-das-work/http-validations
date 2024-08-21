@@ -1,4 +1,4 @@
-package com.validation.http.exception;
+package io.github.sayantandaswork.httpvalidation.exception;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ResponseStatus;

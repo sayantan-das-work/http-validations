@@ -1,4 +1,4 @@
-package com.validation.http.exception.handlers;
+package io.github.sayantandaswork.httpvalidation.exception.handlers;
 
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.MethodArgumentNotValidException;

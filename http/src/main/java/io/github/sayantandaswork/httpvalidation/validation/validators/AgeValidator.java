@@ -5,13 +5,9 @@ import io.github.sayantandaswork.httpvalidation.validation.Age;
 import javax.validation.ConstraintValidator;
 import javax.validation.ConstraintValidatorContext;
 
-public class AgeValidator implements ConstraintValidator<Age, Integer> {
-    private static enum AgeValidatorCheck{
-        MIN,
-        MAX
-    }
-    private int minAgeAllowed;
-    private int maxAgeAllowed;
+public class AgeValidator implements ConstraintValidator<Age, Long> {
+    private long minAgeAllowed;
+    private long maxAgeAllowed;
 
     private String minAgeErrMsg;
 
@@ -26,7 +22,7 @@ public class AgeValidator implements ConstraintValidator<Age, Integer> {
     }
 
     @Override
-    public boolean isValid(Integer ageToCheck, ConstraintValidatorContext constraintValidatorContext) {
+    public boolean isValid(Long ageToCheck, ConstraintValidatorContext constraintValidatorContext) {
         if(ageToCheck<minAgeAllowed)
         {
             generateValidationContext(constraintValidatorContext,true);

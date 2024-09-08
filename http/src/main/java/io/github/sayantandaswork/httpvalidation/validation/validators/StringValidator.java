@@ -51,7 +51,7 @@ public class StringValidator implements ConstraintValidator<StringValidation, St
         }
 
         try{
-            pattern = Pattern.compile(constraintAnnotation.regexp());
+            pattern = Pattern.compile(StringUtils.isEmpty(constraintAnnotation.regexp())?"^[^<>\"'&?]*$":constraintAnnotation.regexp());
         }catch (PatternSyntaxException patternSyntaxException){
             log.error("[ {}.initialize() ] :: Invalid regex pattern provided", LOG_PREFIX);
             throw new IllegalValidationConstraintsException(
